@@ -48,12 +48,17 @@ steps:
     inputs:
       SonarCloud: "SonarCloud connection 1"
       organization: "$(SonarOrganization)"
+<<<<<<< HEAD
+=======
+      scannerMode: "MSBuild"
+>>>>>>> cc0c2807a8620db5d750aca2d95e715c7b48ec76
       projectKey: "$(SonarProjectKey)"
       projectName: "$(SonarProjectName)"
       projectVersion: "$(Build.BuildNumber)"
       extraProperties: |
         sonar.cs.opencover.reportsPaths=$(Build.SourcesDirectory)/TestResults/Coverage/coverage.opencover.xml
         sonar.exclusions=**/wwwroot/lib/**/*
+<<<<<<< HEAD
     condition: |
       and
       (
@@ -61,6 +66,8 @@ steps:
         eq(variables['Build.Reason'], 'PullRequest'),
         eq(variables['System.PullRequest.TargetBranch'], 'master')
       )
+=======
+>>>>>>> cc0c2807a8620db5d750aca2d95e715c7b48ec76
 
   - task: DotNetCoreCLI@2
     displayName: "Build the project - $(buildConfiguration)"
